@@ -1,14 +1,14 @@
-import { Grid, Typography, Box, CircularProgress, Alert } from '@mui/material';
-import { ProductCard } from '../components/products';
-import { useProducts } from '../hooks';
+import { Grid, Typography, Box, CircularProgress, Alert } from "@mui/material";
+import { ProductCard } from "../components/products";
+import { useProducts } from "../hooks";
 
 export function HomePage() {
   const { data: products, isLoading, error } = useProducts();
 
   if (isLoading) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
-        <CircularProgress sx={{ color: '#d4af37' }} />
+      <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>
+        <CircularProgress sx={{ color: "#d4af37" }} />
       </Box>
     );
   }
@@ -27,15 +27,15 @@ export function HomePage() {
         variant="h4"
         sx={{
           mb: 3,
-          color: '#d4af37',
+          color: "#d4af37",
           fontWeight: 700,
-          fontFamily: 'Georgia, serif',
         }}
       >
-        Premium Gold Collection
+        لیست محصولات طلا پارسیس
       </Typography>
-      <Typography variant="body1" sx={{ mb: 4, color: '#aaa' }}>
-        Discover our curated selection of authentic Persian gold jewelry and investment pieces.
+      <Typography variant="body1" sx={{ mb: 4, color: "#aaa" }}>
+        Discover our curated selection of authentic Persian gold jewelry and
+        investment pieces.
       </Typography>
       <Grid container spacing={3}>
         {(products ?? []).map((product) => (

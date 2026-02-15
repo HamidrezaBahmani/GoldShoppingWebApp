@@ -1,6 +1,8 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { CartProvider } from './context/CartContext';
-import { AppRouter } from './routes';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { CartProvider } from "./context/CartContext";
+import { AppRouter } from "./routes";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./theme/theme";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,9 +16,12 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        <AppRouter />
-      </CartProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <CartProvider>
+          <AppRouter />
+        </CartProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
