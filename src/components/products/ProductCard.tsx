@@ -17,12 +17,12 @@ interface ProductCardProps {
   product: Product;
 }
 
-function formatPrice(price: number): string {
-  return new Intl.NumberFormat("en-US", {
+function formatPrice(priceInRials: number): string {
+  return new Intl.NumberFormat("fa-IR", {
     style: "currency",
-    currency: "USD",
+    currency: "IRR",
     minimumFractionDigits: 0,
-  }).format(price);
+  }).format(priceInRials);
 }
 
 export function ProductCard({ product }: ProductCardProps) {
