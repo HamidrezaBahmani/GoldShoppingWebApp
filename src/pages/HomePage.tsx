@@ -35,7 +35,7 @@ export function HomePage() {
 
   return (
     <Box>
-      {/* Swiper Section */}
+      {/* Swiper Sectionn */}
       <Box sx={{ mb: 6 }}>
         <Swiper
           modules={[Navigation, Autoplay]}
